@@ -14,11 +14,11 @@ const SignUpForm = () => {
     setError(null);
 
     const formData = new FormData(event.currentTarget);
-    const result = await signUp({ formData });
+    const result = await signUp(formData);
 
     if (result.status === "success") {
       // Status error is negligible. It means that the function is not returning a value from this sign-up form
-      router.push("/");
+      router.push("/login");
     }
     else {
       setError(result.status);
